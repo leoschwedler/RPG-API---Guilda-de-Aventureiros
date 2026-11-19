@@ -47,8 +47,8 @@ public class GlobalExceptionHandler {
     }
 
     // 500
-    @ExceptionHandler(ConflictException.class)
-    public ResponseEntity<ErrorResponse> handlerGenericException(ConflictException exception){
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponse> handlerGenericException(Exception exception){
         ErrorResponse errorResponse = ErrorResponse.builder()
                 .message(exception.getMessage())
                 .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
